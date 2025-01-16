@@ -1,0 +1,612 @@
+{
+  "summary": {
+    "total_submissions_fetched": 454,
+    "total_accepted_submissions": 116,
+    "total_unique_solved_problems": 86,
+    "generated_at": "2024-12-26T18:52:27.848Z"
+  },
+  "most_recent_accepted_submissions": [
+    {
+      "title": "Combine Two Tables",
+      "titleSlug": "combine-two-tables",
+      "timestamp": 1734649320000,
+      "language": "mysql",
+      "url": "/submissions/detail/1483302772/"
+    },
+    {
+      "title": "Symmetric Tree",
+      "titleSlug": "symmetric-tree",
+      "timestamp": 1732552166000,
+      "language": "python",
+      "url": "/submissions/detail/1462591647/"
+    },
+    {
+      "title": "Path Sum",
+      "titleSlug": "path-sum",
+      "timestamp": 1732551840000,
+      "language": "python",
+      "url": "/submissions/detail/1462586944/"
+    },
+    {
+      "title": "Same Tree",
+      "titleSlug": "same-tree",
+      "timestamp": 1732551538000,
+      "language": "python",
+      "url": "/submissions/detail/1462582657/"
+    },
+    {
+      "title": "Rotate Image",
+      "titleSlug": "rotate-image",
+      "timestamp": 1730836636000,
+      "language": "python",
+      "url": "/submissions/detail/1444176545/"
+    },
+    {
+      "title": "Valid Sudoku",
+      "titleSlug": "valid-sudoku",
+      "timestamp": 1730835410000,
+      "language": "python",
+      "url": "/submissions/detail/1444162677/"
+    },
+    {
+      "title": "Minimum Size Subarray Sum",
+      "titleSlug": "minimum-size-subarray-sum",
+      "timestamp": 1730834607000,
+      "language": "python",
+      "url": "/submissions/detail/1444153187/"
+    },
+    {
+      "title": "Is Subsequence",
+      "titleSlug": "is-subsequence",
+      "timestamp": 1730823067000,
+      "language": "python",
+      "url": "/submissions/detail/1443974825/"
+    },
+    {
+      "title": "Jump Game",
+      "titleSlug": "jump-game",
+      "timestamp": 1730820924000,
+      "language": "python",
+      "url": "/submissions/detail/1443942025/"
+    },
+    {
+      "title": "Rotate Array",
+      "titleSlug": "rotate-array",
+      "timestamp": 1730820349000,
+      "language": "python",
+      "url": "/submissions/detail/1443933517/"
+    },
+    {
+      "title": "Remove Duplicates from Sorted Array II",
+      "titleSlug": "remove-duplicates-from-sorted-array-ii",
+      "timestamp": 1730742916000,
+      "language": "python",
+      "url": "/submissions/detail/1443015043/"
+    },
+    {
+      "title": "Merge Sorted Array",
+      "titleSlug": "merge-sorted-array",
+      "timestamp": 1730741193000,
+      "language": "python",
+      "url": "/submissions/detail/1442985256/"
+    },
+    {
+      "title": "Length of Last Word",
+      "titleSlug": "length-of-last-word",
+      "timestamp": 1730687057000,
+      "language": "python",
+      "url": "/submissions/detail/1442284346/"
+    },
+    {
+      "title": "Search Insert Position",
+      "titleSlug": "search-insert-position",
+      "timestamp": 1730686897000,
+      "language": "python",
+      "url": "/submissions/detail/1442282764/"
+    },
+    {
+      "title": "Palindrome Number",
+      "titleSlug": "palindrome-number",
+      "timestamp": 1730678487000,
+      "language": "python",
+      "url": "/submissions/detail/1442206058/"
+    },
+    {
+      "title": "Count Complete Tree Nodes",
+      "titleSlug": "count-complete-tree-nodes",
+      "timestamp": 1730677889000,
+      "language": "python",
+      "url": "/submissions/detail/1442201123/"
+    },
+    {
+      "title": "Contains Duplicate II",
+      "titleSlug": "contains-duplicate-ii",
+      "timestamp": 1730677620000,
+      "language": "python",
+      "url": "/submissions/detail/1442198831/"
+    },
+    {
+      "title": "Palindrome Linked List",
+      "titleSlug": "palindrome-linked-list",
+      "timestamp": 1730671103000,
+      "language": "python",
+      "url": "/submissions/detail/1442144116/"
+    },
+    {
+      "title": "Power of Four",
+      "titleSlug": "power-of-four",
+      "timestamp": 1730670390000,
+      "language": "python",
+      "url": "/submissions/detail/1442137769/"
+    },
+    {
+      "title": "Find the Index of the First Occurrence in a String",
+      "titleSlug": "find-the-index-of-the-first-occurrence-in-a-string",
+      "timestamp": 1730668068000,
+      "language": "python",
+      "url": "/submissions/detail/1442116212/"
+    },
+    {
+      "title": "Remove Element",
+      "titleSlug": "remove-element",
+      "timestamp": 1730667847000,
+      "language": "python",
+      "url": "/submissions/detail/1442114040/"
+    },
+    {
+      "title": "Remove Duplicates from Sorted Array",
+      "titleSlug": "remove-duplicates-from-sorted-array",
+      "timestamp": 1730667579000,
+      "language": "python",
+      "url": "/submissions/detail/1442111348/"
+    },
+    {
+      "title": "Spiral Matrix",
+      "titleSlug": "spiral-matrix",
+      "timestamp": 1730396308000,
+      "language": "python",
+      "url": "/submissions/detail/1439226921/"
+    },
+    {
+      "title": "Unique Paths",
+      "titleSlug": "unique-paths",
+      "timestamp": 1728970006000,
+      "language": "python",
+      "url": "/submissions/detail/1422806981/"
+    },
+    {
+      "title": "Accounts Merge",
+      "titleSlug": "accounts-merge",
+      "timestamp": 1728939389000,
+      "language": "python",
+      "url": "/submissions/detail/1422479085/"
+    },
+    {
+      "title": "Time Based Key-Value Store",
+      "titleSlug": "time-based-key-value-store",
+      "timestamp": 1728929257000,
+      "language": "python",
+      "url": "/submissions/detail/1422330965/"
+    },
+    {
+      "title": "Implement Trie (Prefix Tree)",
+      "titleSlug": "implement-trie-prefix-tree",
+      "timestamp": 1728927571000,
+      "language": "python",
+      "url": "/submissions/detail/1422297936/"
+    },
+    {
+      "title": "Subsets",
+      "titleSlug": "subsets",
+      "timestamp": 1728849982000,
+      "language": "python",
+      "url": "/submissions/detail/1421350022/"
+    },
+    {
+      "title": "Word Break",
+      "titleSlug": "word-break",
+      "timestamp": 1728847159000,
+      "language": "python",
+      "url": "/submissions/detail/1421314858/"
+    },
+    {
+      "title": "Sort Colors",
+      "titleSlug": "sort-colors",
+      "timestamp": 1728795795000,
+      "language": "python",
+      "url": "/submissions/detail/1420662691/"
+    },
+    {
+      "title": "Lowest Common Ancestor of a Binary Tree",
+      "titleSlug": "lowest-common-ancestor-of-a-binary-tree",
+      "timestamp": 1728780322000,
+      "language": "python",
+      "url": "/submissions/detail/1420474965/"
+    },
+    {
+      "title": "Merge Intervals",
+      "titleSlug": "merge-intervals",
+      "timestamp": 1728778634000,
+      "language": "python",
+      "url": "/submissions/detail/1420463764/"
+    },
+    {
+      "title": "Permutations",
+      "titleSlug": "permutations",
+      "timestamp": 1728777430000,
+      "language": "python",
+      "url": "/submissions/detail/1420455739/"
+    },
+    {
+      "title": "Combination Sum",
+      "titleSlug": "combination-sum",
+      "timestamp": 1728774680000,
+      "language": "python",
+      "url": "/submissions/detail/1420436632/"
+    },
+    {
+      "title": "Rotting Oranges",
+      "titleSlug": "rotting-oranges",
+      "timestamp": 1728761322000,
+      "language": "python",
+      "url": "/submissions/detail/1420308788/"
+    },
+    {
+      "title": "Number of Islands",
+      "titleSlug": "number-of-islands",
+      "timestamp": 1728759181000,
+      "language": "python",
+      "url": "/submissions/detail/1420281356/"
+    },
+    {
+      "title": "Course Schedule",
+      "titleSlug": "course-schedule",
+      "timestamp": 1728668882000,
+      "language": "python",
+      "url": "/submissions/detail/1419257690/"
+    },
+    {
+      "title": "Validate Binary Search Tree",
+      "titleSlug": "validate-binary-search-tree",
+      "timestamp": 1728627585000,
+      "language": "python",
+      "url": "/submissions/detail/1418757917/"
+    },
+    {
+      "title": "Product of Array Except Self",
+      "titleSlug": "product-of-array-except-self",
+      "timestamp": 1728626866000,
+      "language": "python",
+      "url": "/submissions/detail/1418749137/"
+    },
+    {
+      "title": "Min Stack",
+      "titleSlug": "min-stack",
+      "timestamp": 1728624297000,
+      "language": "python",
+      "url": "/submissions/detail/1418717984/"
+    },
+    {
+      "title": "Coin Change",
+      "titleSlug": "coin-change",
+      "timestamp": 1728623599000,
+      "language": "python",
+      "url": "/submissions/detail/1418709623/"
+    },
+    {
+      "title": "Evaluate Reverse Polish Notation",
+      "titleSlug": "evaluate-reverse-polish-notation",
+      "timestamp": 1728614807000,
+      "language": "python",
+      "url": "/submissions/detail/1418620792/"
+    },
+    {
+      "title": "Clone Graph",
+      "titleSlug": "clone-graph",
+      "timestamp": 1728613367000,
+      "language": "python",
+      "url": "/submissions/detail/1418608674/"
+    },
+    {
+      "title": "Binary Tree Level Order Traversal",
+      "titleSlug": "binary-tree-level-order-traversal",
+      "timestamp": 1728611770000,
+      "language": "python",
+      "url": "/submissions/detail/1418595987/"
+    },
+    {
+      "title": "3Sum",
+      "titleSlug": "3sum",
+      "timestamp": 1728602171000,
+      "language": "python",
+      "url": "/submissions/detail/1418527028/"
+    },
+    {
+      "title": "K Closest Points to Origin",
+      "titleSlug": "k-closest-points-to-origin",
+      "timestamp": 1728600836000,
+      "language": "python",
+      "url": "/submissions/detail/1418517278/"
+    },
+    {
+      "title": "01 Matrix",
+      "titleSlug": "01-matrix",
+      "timestamp": 1728588981000,
+      "language": "python",
+      "url": "/submissions/detail/1418400472/"
+    },
+    {
+      "title": "Insert Interval",
+      "titleSlug": "insert-interval",
+      "timestamp": 1728588191000,
+      "language": "python",
+      "url": "/submissions/detail/1418390327/"
+    },
+    {
+      "title": "Maximum Subarray",
+      "titleSlug": "maximum-subarray",
+      "timestamp": 1728587492000,
+      "language": "python",
+      "url": "/submissions/detail/1418380639/"
+    },
+    {
+      "title": "Maximum Depth of Binary Tree",
+      "titleSlug": "maximum-depth-of-binary-tree",
+      "timestamp": 1728586203000,
+      "language": "python",
+      "url": "/submissions/detail/1418361919/"
+    },
+    {
+      "title": "Diameter of Binary Tree",
+      "titleSlug": "diameter-of-binary-tree",
+      "timestamp": 1728585795000,
+      "language": "python",
+      "url": "/submissions/detail/1418355666/"
+    },
+    {
+      "title": "Add Binary",
+      "titleSlug": "add-binary",
+      "timestamp": 1728585325000,
+      "language": "python",
+      "url": "/submissions/detail/1418348432/"
+    },
+    {
+      "title": "Longest Palindrome",
+      "titleSlug": "longest-palindrome",
+      "timestamp": 1728584110000,
+      "language": "python",
+      "url": "/submissions/detail/1418327382/"
+    },
+    {
+      "title": "Climbing Stairs",
+      "titleSlug": "climbing-stairs",
+      "timestamp": 1728583577000,
+      "language": "python",
+      "url": "/submissions/detail/1418317880/"
+    },
+    {
+      "title": "Ransom Note",
+      "titleSlug": "ransom-note",
+      "timestamp": 1728581905000,
+      "language": "python",
+      "url": "/submissions/detail/1418288238/"
+    },
+    {
+      "title": "First Bad Version",
+      "titleSlug": "first-bad-version",
+      "timestamp": 1728580987000,
+      "language": "python",
+      "url": "/submissions/detail/1418271806/"
+    },
+    {
+      "title": "Implement Queue using Stacks",
+      "titleSlug": "implement-queue-using-stacks",
+      "timestamp": 1728580535000,
+      "language": "python",
+      "url": "/submissions/detail/1418263923/"
+    },
+    {
+      "title": "Balanced Binary Tree",
+      "titleSlug": "balanced-binary-tree",
+      "timestamp": 1728579806000,
+      "language": "python",
+      "url": "/submissions/detail/1418251759/"
+    },
+    {
+      "title": "Lowest Common Ancestor of a Binary Search Tree",
+      "titleSlug": "lowest-common-ancestor-of-a-binary-search-tree",
+      "timestamp": 1728537368000,
+      "language": "python",
+      "url": "/submissions/detail/1417703918/"
+    },
+    {
+      "title": "Flood Fill",
+      "titleSlug": "flood-fill",
+      "timestamp": 1728536473000,
+      "language": "python",
+      "url": "/submissions/detail/1417692395/"
+    },
+    {
+      "title": "Binary Search",
+      "titleSlug": "binary-search",
+      "timestamp": 1728535085000,
+      "language": "python",
+      "url": "/submissions/detail/1417674544/"
+    },
+    {
+      "title": "Valid Anagram",
+      "titleSlug": "valid-anagram",
+      "timestamp": 1728534510000,
+      "language": "python",
+      "url": "/submissions/detail/1417667072/"
+    },
+    {
+      "title": "Valid Palindrome",
+      "titleSlug": "valid-palindrome",
+      "timestamp": 1728534395000,
+      "language": "python",
+      "url": "/submissions/detail/1417665596/"
+    },
+    {
+      "title": "Reverse Integer",
+      "titleSlug": "reverse-integer",
+      "timestamp": 1728533627000,
+      "language": "python",
+      "url": "/submissions/detail/1417655843/"
+    },
+    {
+      "title": "Longest Common Prefix",
+      "titleSlug": "longest-common-prefix",
+      "timestamp": 1728524393000,
+      "language": "python",
+      "url": "/submissions/detail/1417560511/"
+    },
+    {
+      "title": "Roman to Integer",
+      "titleSlug": "roman-to-integer",
+      "timestamp": 1728523213000,
+      "language": "python",
+      "url": "/submissions/detail/1417550579/"
+    },
+    {
+      "title": "Container With Most Water",
+      "titleSlug": "container-with-most-water",
+      "timestamp": 1728522574000,
+      "language": "python",
+      "url": "/submissions/detail/1417545284/"
+    },
+    {
+      "title": "Longest Palindromic Substring",
+      "titleSlug": "longest-palindromic-substring",
+      "timestamp": 1728521380000,
+      "language": "python",
+      "url": "/submissions/detail/1417535592/"
+    },
+    {
+      "title": "Longest Substring Without Repeating Characters",
+      "titleSlug": "longest-substring-without-repeating-characters",
+      "timestamp": 1728418311000,
+      "language": "python",
+      "url": "/submissions/detail/1416288833/"
+    },
+    {
+      "title": "Add Two Numbers",
+      "titleSlug": "add-two-numbers",
+      "timestamp": 1728415196000,
+      "language": "python",
+      "url": "/submissions/detail/1416247492/"
+    },
+    {
+      "title": "Construct Binary Search Tree from Preorder Traversal",
+      "titleSlug": "construct-binary-search-tree-from-preorder-traversal",
+      "timestamp": 1716947682000,
+      "language": "python",
+      "url": "/submissions/detail/1270937251/"
+    },
+    {
+      "title": "Best Time to Buy and Sell Stock II",
+      "titleSlug": "best-time-to-buy-and-sell-stock-ii",
+      "timestamp": 1710107172000,
+      "language": "python",
+      "url": "/submissions/detail/1199968307/"
+    },
+    {
+      "title": "Invert Binary Tree",
+      "titleSlug": "invert-binary-tree",
+      "timestamp": 1709930526000,
+      "language": "java",
+      "url": "/submissions/detail/1197952979/"
+    },
+    {
+      "title": "Binary Tree Inorder Traversal",
+      "titleSlug": "binary-tree-inorder-traversal",
+      "timestamp": 1709926829000,
+      "language": "java",
+      "url": "/submissions/detail/1197918720/"
+    },
+    {
+      "title": "Convert Sorted Array to Binary Search Tree",
+      "titleSlug": "convert-sorted-array-to-binary-search-tree",
+      "timestamp": 1709926000000,
+      "language": "python",
+      "url": "/submissions/detail/1197910235/"
+    },
+    {
+      "title": "Median of Two Sorted Arrays",
+      "titleSlug": "median-of-two-sorted-arrays",
+      "timestamp": 1692218316000,
+      "language": "python",
+      "url": "/submissions/detail/1023389563/"
+    },
+    {
+      "title": "Two Sum II - Input Array Is Sorted",
+      "titleSlug": "two-sum-ii-input-array-is-sorted",
+      "timestamp": 1691963875000,
+      "language": "python",
+      "url": "/submissions/detail/1020584869/"
+    },
+    {
+      "title": "Middle of the Linked List",
+      "titleSlug": "middle-of-the-linked-list",
+      "timestamp": 1691687424000,
+      "language": "python",
+      "url": "/submissions/detail/1017736386/"
+    },
+    {
+      "title": "Reverse Linked List",
+      "titleSlug": "reverse-linked-list",
+      "timestamp": 1691686845000,
+      "language": "python",
+      "url": "/submissions/detail/1017727220/"
+    },
+    {
+      "title": "Linked List Cycle",
+      "titleSlug": "linked-list-cycle",
+      "timestamp": 1691685674000,
+      "language": "python",
+      "url": "/submissions/detail/1017709591/"
+    },
+    {
+      "title": "Merge Two Sorted Lists",
+      "titleSlug": "merge-two-sorted-lists",
+      "timestamp": 1691623206000,
+      "language": "python",
+      "url": "/submissions/detail/1017034904/"
+    },
+    {
+      "title": "Contains Duplicate",
+      "titleSlug": "contains-duplicate",
+      "timestamp": 1691620762000,
+      "language": "python",
+      "url": "/submissions/detail/1017019273/"
+    },
+    {
+      "title": "Majority Element",
+      "titleSlug": "majority-element",
+      "timestamp": 1691620486000,
+      "language": "python",
+      "url": "/submissions/detail/1017017456/"
+    },
+    {
+      "title": "Two Sum",
+      "titleSlug": "two-sum",
+      "timestamp": 1691619965000,
+      "language": "python",
+      "url": "/submissions/detail/1017014035/"
+    },
+    {
+      "title": "Valid Parentheses",
+      "titleSlug": "valid-parentheses",
+      "timestamp": 1689865699000,
+      "language": "java",
+      "url": "/submissions/detail/999431561/"
+    },
+    {
+      "title": "Best Time to Buy and Sell Stock",
+      "titleSlug": "best-time-to-buy-and-sell-stock",
+      "timestamp": 1689707705000,
+      "language": "java",
+      "url": "/submissions/detail/997868862/"
+    }
+  ]
+}
