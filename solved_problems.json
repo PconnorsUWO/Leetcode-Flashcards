@@ -1,11 +1,137 @@
 {
   "summary": {
-    "total_submissions_fetched": 454,
-    "total_accepted_submissions": 116,
-    "total_unique_solved_problems": 86,
-    "generated_at": "2024-12-26T18:52:27.848Z"
+    "total_submissions_fetched": 485,
+    "total_accepted_submissions": 136,
+    "total_unique_solved_problems": 104,
+    "generated_at": "2025-01-16T18:54:22.339Z"
   },
   "most_recent_accepted_submissions": [
+    {
+      "title": "Jump Game II",
+      "titleSlug": "jump-game-ii",
+      "timestamp": 1736785222000,
+      "language": "python3",
+      "url": "/submissions/detail/1507423345/"
+    },
+    {
+      "title": "Biggest Single Number",
+      "titleSlug": "biggest-single-number",
+      "timestamp": 1736400901000,
+      "language": "mysql",
+      "url": "/submissions/detail/1502596276/"
+    },
+    {
+      "title": "Shortest Distance in a Line",
+      "titleSlug": "shortest-distance-in-a-line",
+      "timestamp": 1736400510000,
+      "language": "mysql",
+      "url": "/submissions/detail/1502590202/"
+    },
+    {
+      "title": "Moving Average from Data Stream",
+      "titleSlug": "moving-average-from-data-stream",
+      "timestamp": 1736397365000,
+      "language": "python3",
+      "url": "/submissions/detail/1502540610/"
+    },
+    {
+      "title": "Triangle Judgement",
+      "titleSlug": "triangle-judgement",
+      "timestamp": 1736396418000,
+      "language": "mysql",
+      "url": "/submissions/detail/1502526056/"
+    },
+    {
+      "title": "Sales Person",
+      "titleSlug": "sales-person",
+      "timestamp": 1736385070000,
+      "language": "mysql",
+      "url": "/submissions/detail/1502399399/"
+    },
+    {
+      "title": "Consecutive Available Seats",
+      "titleSlug": "consecutive-available-seats",
+      "timestamp": 1736350766000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501965016/"
+    },
+    {
+      "title": "Customers Who Never Order",
+      "titleSlug": "customers-who-never-order",
+      "timestamp": 1736350373000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501958749/"
+    },
+    {
+      "title": "Friend Requests I: Overall Acceptance Rate",
+      "titleSlug": "friend-requests-i-overall-acceptance-rate",
+      "timestamp": 1736323007000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501594770/"
+    },
+    {
+      "title": "Classes More Than 5 Students",
+      "titleSlug": "classes-more-than-5-students",
+      "timestamp": 1736322713000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501591139/"
+    },
+    {
+      "title": "Big Countries",
+      "titleSlug": "big-countries",
+      "timestamp": 1736322607000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501589873/"
+    },
+    {
+      "title": "Customer Placing the Largest Number of Orders",
+      "titleSlug": "customer-placing-the-largest-number-of-orders",
+      "timestamp": 1736322472000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501588274/"
+    },
+    {
+      "title": "Find Customer Referee",
+      "titleSlug": "find-customer-referee",
+      "timestamp": 1736322256000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501585689/"
+    },
+    {
+      "title": "Employee Bonus",
+      "titleSlug": "employee-bonus",
+      "timestamp": 1736322119000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501584076/"
+    },
+    {
+      "title": "Rising Temperature",
+      "titleSlug": "rising-temperature",
+      "timestamp": 1736321943000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501581891/"
+    },
+    {
+      "title": "Delete Duplicate Emails",
+      "titleSlug": "delete-duplicate-emails",
+      "timestamp": 1736321773000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501579809/"
+    },
+    {
+      "title": "Duplicate Emails",
+      "titleSlug": "duplicate-emails",
+      "timestamp": 1736321617000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501577687/"
+    },
+    {
+      "title": "Employees Earning More Than Their Managers",
+      "titleSlug": "employees-earning-more-than-their-managers",
+      "timestamp": 1736320076000,
+      "language": "mysql",
+      "url": "/submissions/detail/1501556793/"
+    },
     {
       "title": "Combine Two Tables",
       "titleSlug": "combine-two-tables",
