@@ -11,728 +11,832 @@
       "titleSlug": "jump-game-ii",
       "timestamp": 1736785222000,
       "language": "python3",
-      "url": "/submissions/detail/1507423345/"
+      "url": "/submissions/detail/1507423345/",
+      "submissionCode": "class Solution:\n    def jump(self, nums: List[int]) -> int:\n        answer, n = 0, len(nums)\n        cur_end, cur_far = 0,0\n\n        for i in range(n-1):\n\n            cur_far = max(cur_far, i + nums[i])\n\n            if i == cur_end:\n                answer += 1\n                cur_end = cur_far\n            \n        return answer"
     },
     {
       "title": "Biggest Single Number",
       "titleSlug": "biggest-single-number",
       "timestamp": 1736400901000,
       "language": "mysql",
-      "url": "/submissions/detail/1502596276/"
+      "url": "/submissions/detail/1502596276/",
+      "submissionCode": "SELECT MAX(num) as num\nFROM (\n    SELECT \n        num\n    FROM\n        MyNumbers\n    GROUP BY num\n    HAVING COUNT(num) = 1\n) as t\n;\n"
     },
     {
       "title": "Shortest Distance in a Line",
       "titleSlug": "shortest-distance-in-a-line",
       "timestamp": 1736400510000,
       "language": "mysql",
-      "url": "/submissions/detail/1502590202/"
+      "url": "/submissions/detail/1502590202/",
+      "submissionCode": "# Write your MySQL query statement below\nSELECT \n    MIN(ABS(p1.x - p2.x)) AS shortest\nFROM\n    point p1\n        JOIN\n    point p2 ON p1.x != p2.x\n;"
     },
     {
       "title": "Moving Average from Data Stream",
       "titleSlug": "moving-average-from-data-stream",
       "timestamp": 1736397365000,
       "language": "python3",
-      "url": "/submissions/detail/1502540610/"
+      "url": "/submissions/detail/1502540610/",
+      "submissionCode": "from collections import deque\nclass MovingAverage:\n\n    def __init__(self, size: int):\n        self.deque_size = size\n        self.q = deque()\n\n    def next(self, val: int) -> float:\n        deque_size, q = self.deque_size, self.q\n        if len(q) >= deque_size:\n            q.popleft()\n        q.append(val)\n        window_sum = sum(q)\n        return window_sum / min(len(q), deque_size)\n\n# Your MovingAverage object will be instantiated and called as such:\n# obj = MovingAverage(size)\n# param_1 = obj.next(val)"
     },
     {
       "title": "Triangle Judgement",
       "titleSlug": "triangle-judgement",
       "timestamp": 1736396418000,
       "language": "mysql",
-      "url": "/submissions/detail/1502526056/"
+      "url": "/submissions/detail/1502526056/",
+      "submissionCode": "SELECT \n    x,\n    y,\n    z,\n    CASE\n        WHEN x + y > z AND x + z > y AND y + z > x THEN 'Yes'\n        ELSE 'No'\n    END AS 'triangle'\nFROM\n    triangle\n;"
     },
     {
       "title": "Sales Person",
       "titleSlug": "sales-person",
       "timestamp": 1736385070000,
       "language": "mysql",
-      "url": "/submissions/detail/1502399399/"
+      "url": "/submissions/detail/1502399399/",
+      "submissionCode": "SELECT sp.name\nFROM SalesPerson AS sp\nWHERE\n    sp.sales_id NOT IN (\n        SELECT\n            o.sales_id\n        FROM\n            orders o\n                LEFT JOIN\n            company c on o.com_id = c.com_id\n        WHERE\n            c.name = 'RED'\n    )\n;"
     },
     {
       "title": "Consecutive Available Seats",
       "titleSlug": "consecutive-available-seats",
       "timestamp": 1736350766000,
       "language": "mysql",
-      "url": "/submissions/detail/1501965016/"
+      "url": "/submissions/detail/1501965016/",
+      "submissionCode": "# Write your MySQL query statement below\nselect distinct a.seat_id\nfrom cinema a join cinema b\n    on abs(a.seat_id - b.seat_id) = 1\n    and a.free = true and b.free = true\norder by a.seat_id\n;"
     },
     {
       "title": "Customers Who Never Order",
       "titleSlug": "customers-who-never-order",
       "timestamp": 1736350373000,
       "language": "mysql",
-      "url": "/submissions/detail/1501958749/"
+      "url": "/submissions/detail/1501958749/",
+      "submissionCode": "SELECT\n    customers.name as \"customers\"\nFROM\n    customers\nwhere\n    customers.id not in\n    (\n        select customerid from orders\n    )\n;"
     },
     {
       "title": "Friend Requests I: Overall Acceptance Rate",
       "titleSlug": "friend-requests-i-overall-acceptance-rate",
       "timestamp": 1736323007000,
       "language": "mysql",
-      "url": "/submissions/detail/1501594770/"
+      "url": "/submissions/detail/1501594770/",
+      "submissionCode": "# Write your MySQL query statement below\nSELECT\nROUND(\n    IFNULL(\n    (SELECT COUNT(*) FROM (SELECT DISTINCT requester_id, accepter_id FROM RequestAccepted) AS A)\n    /\n    (SELECT COUNT(*) FROM (SELECT DISTINCT sender_id, send_to_id FROM FriendRequest) AS B),\n    0)\n, 2) AS accept_rate;"
     },
     {
       "title": "Classes More Than 5 Students",
       "titleSlug": "classes-more-than-5-students",
       "timestamp": 1736322713000,
       "language": "mysql",
-      "url": "/submissions/detail/1501591139/"
+      "url": "/submissions/detail/1501591139/",
+      "submissionCode": "# Write your MySQL query statement below\nSELECT\n    class\nFROM\n    courses\nGROUP BY class\nHAVING COUNT(student) >= 5;"
     },
     {
       "title": "Big Countries",
       "titleSlug": "big-countries",
       "timestamp": 1736322607000,
       "language": "mysql",
-      "url": "/submissions/detail/1501589873/"
+      "url": "/submissions/detail/1501589873/",
+      "submissionCode": "SELECT \n    name, population, area\nFROM \n    World\nWHERE \n    area >= 3000000 OR population >= 25000000;"
     },
     {
       "title": "Customer Placing the Largest Number of Orders",
       "titleSlug": "customer-placing-the-largest-number-of-orders",
       "timestamp": 1736322472000,
       "language": "mysql",
-      "url": "/submissions/detail/1501588274/"
+      "url": "/submissions/detail/1501588274/",
+      "submissionCode": "SELECT\n    customer_number\nFROM\n    orders\nGROUP BY customer_number\nORDER BY COUNT(*) DESC\nLIMIT 1\n;"
     },
     {
       "title": "Find Customer Referee",
       "titleSlug": "find-customer-referee",
       "timestamp": 1736322256000,
       "language": "mysql",
-      "url": "/submissions/detail/1501585689/"
+      "url": "/submissions/detail/1501585689/",
+      "submissionCode": "SELECT \n    name\nFROM \n    Customer\nWHERE \n    referee_id <> 2 OR referee_id IS NULL;\n"
     },
     {
       "title": "Employee Bonus",
       "titleSlug": "employee-bonus",
       "timestamp": 1736322119000,
       "language": "mysql",
-      "url": "/submissions/detail/1501584076/"
+      "url": "/submissions/detail/1501584076/",
+      "submissionCode": "# Write your MySQL query statement below\nSELECT\n    Employee.name, Bonus.Bonus\nFROM\n    Employee\n        LEFT JOIN\n    Bonus ON Employee.empid = Bonus.empid\nWHERE\n    bonus < 1000 OR bonus is NULL\n;"
     },
     {
       "title": "Rising Temperature",
       "titleSlug": "rising-temperature",
       "timestamp": 1736321943000,
       "language": "mysql",
-      "url": "/submissions/detail/1501581891/"
+      "url": "/submissions/detail/1501581891/",
+      "submissionCode": "# Write your MySQL query statement below\nSELECT\n    w1.id\nFROM\n    Weather w1\nJOIN\n    Weather w2\nON\n    DATEDIFF(w1.recordDate, w2.recordDate) = 1\nWHERE\n    w1.temperature > w2.temperature;"
     },
     {
       "title": "Delete Duplicate Emails",
       "titleSlug": "delete-duplicate-emails",
       "timestamp": 1736321773000,
       "language": "mysql",
-      "url": "/submissions/detail/1501579809/"
+      "url": "/submissions/detail/1501579809/",
+      "submissionCode": "DELETE p1 FROM person p1,\n    person p2\nWHERE\n    p1.Email = p2.Email AND p1.Id > p2.Id"
     },
     {
       "title": "Duplicate Emails",
       "titleSlug": "duplicate-emails",
       "timestamp": 1736321617000,
       "language": "mysql",
-      "url": "/submissions/detail/1501577687/"
+      "url": "/submissions/detail/1501577687/",
+      "submissionCode": "# Write your MySQL query statement below\nselect EMAIL from \n(\n    select Email, count(Email) as num\n    from Person\n    group by Email\n) as statistic\nwhere num > 1\n;"
     },
     {
       "title": "Employees Earning More Than Their Managers",
       "titleSlug": "employees-earning-more-than-their-managers",
       "timestamp": 1736320076000,
       "language": "mysql",
-      "url": "/submissions/detail/1501556793/"
+      "url": "/submissions/detail/1501556793/",
+      "submissionCode": "# Write your MySQL query statement below\nSELECT\n     a.NAME AS Employee\nFROM Employee AS a JOIN Employee AS b\n     ON a.ManagerId = b.Id\n     AND a.Salary > b.Salary\n;"
     },
     {
       "title": "Combine Two Tables",
       "titleSlug": "combine-two-tables",
       "timestamp": 1734649320000,
       "language": "mysql",
-      "url": "/submissions/detail/1483302772/"
+      "url": "/submissions/detail/1483302772/",
+      "submissionCode": "# Write your MySQL query statement below\nSELECT P.firstName, P.lastName, A.city, A.state\nFROM Person P Left Join Address A\non P.personId = A.personId"
     },
     {
       "title": "Symmetric Tree",
       "titleSlug": "symmetric-tree",
       "timestamp": 1732552166000,
       "language": "python",
-      "url": "/submissions/detail/1462591647/"
+      "url": "/submissions/detail/1462591647/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution(object):\n    def isSymmetric(self, root):\n        \"\"\"\n        :type root: Optional[TreeNode]\n        :rtype: bool\n        \"\"\"\n        return self.isMirror(root,root)\n        \n    def isMirror(self, t1, t2):\n        if t1 is None and t2 is None:\n            return True\n        if t1 is None or t2 is None:\n            return False\n        return (\n            (t1.val == t2.val)\n            and self.isMirror(t1.right, t2.left)\n            and self.isMirror(t1.left, t2.right)\n        )"
     },
     {
       "title": "Path Sum",
       "titleSlug": "path-sum",
       "timestamp": 1732551840000,
       "language": "python",
-      "url": "/submissions/detail/1462586944/"
+      "url": "/submissions/detail/1462586944/",
+      "submissionCode": "class Solution(object):\n    def hasPathSum(self, root, targetSum):\n        \"\"\"\n        :type root: Optional[TreeNode]\n        :type targetSum: int\n        :rtype: bool\n        \"\"\"\n        if root is None:\n            return False\n        \n        # Check if it's a leaf node\n        if not root.left and not root.right:\n            return targetSum == root.val\n        \n        # Calculate the remaining sum\n        remaining_sum = targetSum - root.val\n        \n        # Recurse into left and right subtrees\n        return self.hasPathSum(root.left, remaining_sum) or self.hasPathSum(root.right, remaining_sum)"
     },
     {
       "title": "Same Tree",
       "titleSlug": "same-tree",
       "timestamp": 1732551538000,
       "language": "python",
-      "url": "/submissions/detail/1462582657/"
+      "url": "/submissions/detail/1462582657/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution(object):\n    def isSameTree(self, p, q):\n        \"\"\"\n        :type p: Optional[TreeNode]\n        :type q: Optional[TreeNode]\n        :rtype: bool\n        \"\"\"\n        # Both trees are empty\n        if not p and not q:\n            return True\n        \n        # One tree is empty, and the other is not\n        if not p or not q:\n            return False\n        \n        # Values of the current nodes do not match\n        if p.val != q.val:\n            return False\n        \n        # Recursively check left and right subtrees\n        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)\n"
     },
     {
       "title": "Rotate Image",
       "titleSlug": "rotate-image",
       "timestamp": 1730836636000,
       "language": "python",
-      "url": "/submissions/detail/1444176545/"
+      "url": "/submissions/detail/1444176545/",
+      "submissionCode": "class Solution(object):\n    def rotate(self, matrix):\n    \n        \"\"\"\n        :type matrix: List[List[int]]\n        :rtype: None Do not return anything, modify matrix in-place instead.\n        \"\"\"\n        self.transpose(matrix)\n        self.reflect(matrix)\n    def transpose(self, matrix):\n        N = len(matrix)\n        for i in range(N):\n            for j in range(i + 1, N):\n                matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]\n\n    def reflect(self, matrix):\n        N = len(matrix)\n        for i in range(N):\n            for j in range(N // 2):\n                matrix[i][j], matrix[i][-j - 1] = matrix[i][-j - 1],matrix[i][j]"
     },
     {
       "title": "Valid Sudoku",
       "titleSlug": "valid-sudoku",
       "timestamp": 1730835410000,
       "language": "python",
-      "url": "/submissions/detail/1444162677/"
+      "url": "/submissions/detail/1444162677/",
+      "submissionCode": "class Solution(object):\n    def isValidSudoku(self, board):\n        \"\"\"\n        :type board: List[List[str]]\n        :rtype: bool\n        \"\"\"\n        N = 9\n        rows = [set() for _ in range(N)]\n        cols = [set() for _ in range(N)]\n        boxes = [set() for _ in range(N)]\n\n        for r in range(N):\n            for c in range(N):\n                val = board[r][c]\n                if val == \".\":\n                    continue\n                \n                if val in rows[r]:\n                    return False\n                rows[r].add(val)\n                \n                if val in cols[c]:\n                    return False\n                cols[c].add(val)\n\n                idx = (r // 3) * 3 + c // 3\n                \n                if val in boxes[idx]:\n                    return False\n                boxes[idx].add(val)\n        \n        return True"
     },
     {
       "title": "Minimum Size Subarray Sum",
       "titleSlug": "minimum-size-subarray-sum",
       "timestamp": 1730834607000,
       "language": "python",
-      "url": "/submissions/detail/1444153187/"
+      "url": "/submissions/detail/1444153187/",
+      "submissionCode": "class Solution(object):\n    def minSubArrayLen(self, target, nums):\n        \"\"\"\n        :type target: int\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        r = 0\n        res = float('inf')\n        sum_subarray = 0\n        \n        for i in range(len(nums)):\n            while sum_subarray < target and r < len(nums):\n                sum_subarray += nums[r]\n                r += 1\n            \n            if sum_subarray >= target:\n                res = min(res, r - i)\n            \n            sum_subarray -= nums[i]\n        \n        return res if res != float('inf') else 0\n"
     },
     {
       "title": "Is Subsequence",
       "titleSlug": "is-subsequence",
       "timestamp": 1730823067000,
       "language": "python",
-      "url": "/submissions/detail/1443974825/"
+      "url": "/submissions/detail/1443974825/",
+      "submissionCode": "class Solution(object):\n    def isSubsequence(self, s, t):\n        \"\"\"\n        :type s: str\n        :type t: str\n        :rtype: bool\n        \"\"\"\n        l, r = 0, 0\n\n        while l < len(s) and r < len(t):\n            if s[l] == t[r]:\n                l += 1\n            r += 1\n\n        return l == len(s)"
     },
     {
       "title": "Jump Game",
       "titleSlug": "jump-game",
       "timestamp": 1730820924000,
       "language": "python",
-      "url": "/submissions/detail/1443942025/"
+      "url": "/submissions/detail/1443942025/",
+      "submissionCode": "class Solution(object):\n    def canJump(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: bool\n        \"\"\"\n        n = len(nums) - 1\n        for i in range(n-1,-1,-1):\n            if i + nums[i] >= n:\n                n = i\n        return n == 0\n"
     },
     {
       "title": "Rotate Array",
       "titleSlug": "rotate-array",
       "timestamp": 1730820349000,
       "language": "python",
-      "url": "/submissions/detail/1443933517/"
+      "url": "/submissions/detail/1443933517/",
+      "submissionCode": "class Solution(object):\n    def rotate(self, nums, k):\n        \"\"\"\n        :type nums: List[int]\n        :type k: int\n        :rtype: None Do not return anything, modify nums in-place instead.\n        \"\"\"\n        a = [0]*len(nums)\n        for i in range(len(nums)):\n            a[(i+k)%len(nums)] = nums[i]\n        \n        nums[:] = a"
     },
     {
       "title": "Remove Duplicates from Sorted Array II",
       "titleSlug": "remove-duplicates-from-sorted-array-ii",
       "timestamp": 1730742916000,
       "language": "python",
-      "url": "/submissions/detail/1443015043/"
+      "url": "/submissions/detail/1443015043/",
+      "submissionCode": "class Solution(object):\n    def removeDuplicates(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        if len(nums) <= 2:\n            return len(nums)\n        \n        m = 2 \n\n        for i in range(2, len(nums)):\n\n            if nums[i] != nums[m - 2]:\n                nums[m] = nums[i]\n                m += 1\n        \n        return m"
     },
     {
       "title": "Merge Sorted Array",
       "titleSlug": "merge-sorted-array",
       "timestamp": 1730741193000,
       "language": "python",
-      "url": "/submissions/detail/1442985256/"
+      "url": "/submissions/detail/1442985256/",
+      "submissionCode": "class Solution(object):\n    def merge(self, nums1, m, nums2, n):\n        \"\"\"\n        :type nums1: List[int]\n        :type m: int\n        :type nums2: List[int]\n        :type n: int\n        :rtype: None Do not return anything, modify nums1 in-place instead.\n        \"\"\"\n        m, n, i = m - 1, n - 1, len(nums1) - 1\n        \n        while n >= 0:\n            if m >= 0 and nums1[m] > nums2[n]:\n                nums1[i] = nums1[m]\n                m -= 1\n            else:\n                nums1[i] = nums2[n]\n                n -= 1\n            i -= 1"
     },
     {
       "title": "Length of Last Word",
       "titleSlug": "length-of-last-word",
       "timestamp": 1730687057000,
       "language": "python",
-      "url": "/submissions/detail/1442284346/"
+      "url": "/submissions/detail/1442284346/",
+      "submissionCode": "class Solution(object):\n    def lengthOfLastWord(self, s):\n        \"\"\"\n        :type s: str\n        :rtype: int\n        \"\"\"\n        return 0 if not s or s.isspace() else len(s.split()[-1])"
     },
     {
       "title": "Search Insert Position",
       "titleSlug": "search-insert-position",
       "timestamp": 1730686897000,
       "language": "python",
-      "url": "/submissions/detail/1442282764/"
+      "url": "/submissions/detail/1442282764/",
+      "submissionCode": "class Solution(object):\n    def searchInsert(self, nums, target):\n        \"\"\"\n        :type nums: List[int]\n        :type target: int\n        :rtype: int\n        \"\"\"\n        l, r = 0, len(nums) - 1\n\n        while l <= r:\n            m = (l + r)//2\n            if nums[m] == target:\n                return m\n            elif nums[m] < target:\n                l = m + 1\n            else:\n                r = m - 1\n        \n        return l\n            \n\n        "
     },
     {
       "title": "Palindrome Number",
       "titleSlug": "palindrome-number",
       "timestamp": 1730678487000,
       "language": "python",
-      "url": "/submissions/detail/1442206058/"
+      "url": "/submissions/detail/1442206058/",
+      "submissionCode": "class Solution(object):\n    def isPalindrome(self, x):\n        \"\"\"\n        :type x: int\n        :rtype: bool\n        \"\"\"\n\n\n        if x < 0 or (x % 10 == 0 and x != 0):\n            return False\n\n        revertedNumber = 0\n        while x > revertedNumber:\n            revertedNumber = revertedNumber * 10 + x % 10\n            x //= 10\n\n    \n        \n        return x == revertedNumber or x == revertedNumber // 10"
     },
     {
       "title": "Count Complete Tree Nodes",
       "titleSlug": "count-complete-tree-nodes",
       "timestamp": 1730677889000,
       "language": "python",
-      "url": "/submissions/detail/1442201123/"
+      "url": "/submissions/detail/1442201123/",
+      "submissionCode": "class Solution(object):\n    \n    def countNodes(self, root):\n        \"\"\"\n        :type root: Optional[TreeNode]\n        :rtype: int\n        \"\"\"\n        if not root:\n            return 0\n        \n        return 1 + self.countNodes(root.right) + self.countNodes(root.left)\n"
     },
     {
       "title": "Contains Duplicate II",
       "titleSlug": "contains-duplicate-ii",
       "timestamp": 1730677620000,
       "language": "python",
-      "url": "/submissions/detail/1442198831/"
+      "url": "/submissions/detail/1442198831/",
+      "submissionCode": "class Solution(object):\n    def containsNearbyDuplicate(self, nums, k):\n        dic = {}\n        for i, j in enumerate(nums):\n            if j in dic and i - dic[j] <= k:\n                return True\n            dic[j] = i\n        return False\n        "
     },
     {
       "title": "Palindrome Linked List",
       "titleSlug": "palindrome-linked-list",
       "timestamp": 1730671103000,
       "language": "python",
-      "url": "/submissions/detail/1442144116/"
+      "url": "/submissions/detail/1442144116/",
+      "submissionCode": "class Solution:\n    def isPalindrome(self, head):\n        vals = []\n        current_node = head\n        while current_node is not None:\n            vals.append(current_node.val)\n            current_node = current_node.next\n        return vals == vals[::-1]"
     },
     {
       "title": "Power of Four",
       "titleSlug": "power-of-four",
       "timestamp": 1730670390000,
       "language": "python",
-      "url": "/submissions/detail/1442137769/"
+      "url": "/submissions/detail/1442137769/",
+      "submissionCode": "class Powers:\n    def __init__(self):\n        max_power = 15\n        self.nums = nums = [1] * (max_power + 1)\n        for i in range(1, max_power + 1):\n            nums[i] = 4 * nums[i - 1]\n\nclass Solution:\n    p = Powers()\n    def isPowerOfFour(self, num):\n        return num in self.p.nums"
     },
     {
       "title": "Find the Index of the First Occurrence in a String",
       "titleSlug": "find-the-index-of-the-first-occurrence-in-a-string",
       "timestamp": 1730668068000,
       "language": "python",
-      "url": "/submissions/detail/1442116212/"
+      "url": "/submissions/detail/1442116212/",
+      "submissionCode": "class Solution:\n    def strStr(self, haystack, needle):\n        m, n = len(haystack), len(needle)\n        for i in range(m - n + 1):\n            if haystack[i:i + n] == needle:\n                return i\n        return -1"
     },
     {
       "title": "Remove Element",
       "titleSlug": "remove-element",
       "timestamp": 1730667847000,
       "language": "python",
-      "url": "/submissions/detail/1442114040/"
+      "url": "/submissions/detail/1442114040/",
+      "submissionCode": "class Solution(object):\n    def removeElement(self, nums, val):\n        \"\"\"\n        :type nums: List[int]\n        :type val: int\n        :rtype: int\n        \"\"\"\n        k = 0\n\n        for i in range(len(nums)):\n            if nums[i] != val:\n                nums[k] = nums[i] \n                k += 1 \n\n        return k"
     },
     {
       "title": "Remove Duplicates from Sorted Array",
       "titleSlug": "remove-duplicates-from-sorted-array",
       "timestamp": 1730667579000,
       "language": "python",
-      "url": "/submissions/detail/1442111348/"
+      "url": "/submissions/detail/1442111348/",
+      "submissionCode": "class Solution(object):\n    def removeDuplicates(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: int\n        \"\"\"\n        if not nums:\n            return 0\n\n        l = 0\n\n        for r in range(1, len(nums)):\n            if nums[r] != nums[l]: \n                l += 1  \n                nums[l] = nums[r]  \n        return l + 1\n"
     },
     {
       "title": "Spiral Matrix",
       "titleSlug": "spiral-matrix",
       "timestamp": 1730396308000,
       "language": "python",
-      "url": "/submissions/detail/1439226921/"
+      "url": "/submissions/detail/1439226921/",
+      "submissionCode": "class Solution(object):\n    def spiralOrder(self, matrix):\n        \"\"\"\n        :type matrix: List[List[int]]\n        :rtype: List[int]\n        \"\"\"\n        result = []\n        rows, columns = len(matrix), len(matrix[0])\n        up = left = 0\n        right = columns - 1\n        down = rows - 1\n\n        answer = []\n\n        while len(result) < rows * columns:\n            for col in range(left, right + 1):\n                result.append(matrix[up][col])\n            \n            for row in range(up + 1, down + 1):\n                result.append(matrix[row][right])\n            \n            if up != down:\n                for col in range(right - 1, left - 1, -1):\n                    result.append(matrix[down][col])\n\n            if left != right:\n                for row in range(down - 1, up, -1):\n                    result.append(matrix[row][left])\n\n            left += 1\n            right -= 1\n            up += 1\n            down -= 1\n\n        return result"
     },
     {
       "title": "Unique Paths",
       "titleSlug": "unique-paths",
       "timestamp": 1728970006000,
       "language": "python",
-      "url": "/submissions/detail/1422806981/"
+      "url": "/submissions/detail/1422806981/",
+      "submissionCode": "class Solution(object):\n    def uniquePaths(self, m, n):\n\n        aboveRow = [1] * n\n        for _ in range(m-1):\n            currentRow = [1] * n\n            for i in range(1,n):\n                currentRow[i] = currentRow[i-1] + aboveRow[i]\n            aboveRow = currentRow\n        \n        return aboveRow[-1]\n\n\n             "
     },
     {
       "title": "Accounts Merge",
       "titleSlug": "accounts-merge",
       "timestamp": 1728939389000,
       "language": "python",
-      "url": "/submissions/detail/1422479085/"
+      "url": "/submissions/detail/1422479085/",
+      "submissionCode": "\nclass Solution(object):\n    def accountsMerge(self, accounts):\n        \"\"\"\n        :type accounts: List[List[str]]\n        :rtype: List[List[str]]\n        \"\"\"\n        from collections import defaultdict\n\n        parent = {}  \n        email_to_name = {}  \n\n        def find(email):\n            if parent[email] != email:\n                parent[email] = find(parent[email])\n            return parent[email]\n\n        def union(email1, email2):\n            root1, root2 = find(email1), find(email2)\n            if root1 != root2:\n                parent[root2] = root1\n\n        for account in accounts:\n            name = account[0]\n            first_email = account[1]\n\n            for email in account[1:]:\n                if email not in parent:\n                    parent[email] = email \n                union(first_email, email)  \n                email_to_name[email] = name\n\n        merged = defaultdict(list)\n        for email in parent:\n            root = find(email)\n            merged[root].append(email)\n\n        result = []\n        for root, emails in merged.items():\n            result.append([email_to_name[root]] + sorted(emails))\n\n        return result"
     },
     {
       "title": "Time Based Key-Value Store",
       "titleSlug": "time-based-key-value-store",
       "timestamp": 1728929257000,
       "language": "python",
-      "url": "/submissions/detail/1422330965/"
+      "url": "/submissions/detail/1422330965/",
+      "submissionCode": "class TimeMap:\n    def __init__(self):\n        self.store = {}\n\n    def set(self, key, value, timestamp):\n        if key not in self.store:\n            self.store[key] = []\n        self.store[key].append((timestamp, value))\n\n    def get(self, key, timestamp):\n        if key not in self.store:\n            return \"\"\n        values = self.store[key]\n        left, right = 0, len(values) - 1\n        res = \"\"\n        while left <= right:\n            mid = (left + right) // 2\n            if values[mid][0] <= timestamp:\n                res = values[mid][1]\n                left = mid + 1\n            else:\n                right = mid - 1\n        return res"
     },
     {
       "title": "Implement Trie (Prefix Tree)",
       "titleSlug": "implement-trie-prefix-tree",
       "timestamp": 1728927571000,
       "language": "python",
-      "url": "/submissions/detail/1422297936/"
+      "url": "/submissions/detail/1422297936/",
+      "submissionCode": "\n\nclass Trie(object):\n\n    def __init__(self):\n        self.root = {}\n\n    def insert(self, word):\n        \"\"\"\n        :type word: str\n        :rtype: None\n        \"\"\"\n        cur=self.root\n        for letter in word:\n            if letter not in cur:\n                cur[letter]={}\n            cur=cur[letter]\n        cur['*']=''\n\n    def search(self, word):\n        \"\"\"\n        :type word: str\n        :rtype: bool\n        \"\"\"\n        cur=self.root\n        for letter in word:\n            if letter not in cur:\n                return False\n            cur=cur[letter]\n        \n        return '*' in cur\n        \n\n    def startsWith(self, prefix):\n        \"\"\"\n        :type prefix: str\n        :rtype: bool\n        \"\"\"\n        cur = self.root\n        for letter in prefix:\n            if letter not in cur:\n                return False\n            cur = cur[letter]\n        return True\n\n\n# Your Trie object will be instantiated and called as such:\n# obj = Trie()\n# obj.insert(word)\n# param_2 = obj.search(word)\n# param_3 = obj.startsWith(prefix)"
     },
     {
       "title": "Subsets",
       "titleSlug": "subsets",
       "timestamp": 1728849982000,
       "language": "python",
-      "url": "/submissions/detail/1421350022/"
+      "url": "/submissions/detail/1421350022/",
+      "submissionCode": "from collections import deque\n\nclass Solution(object):\n    def subsets(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: List[List[int]]\n        \"\"\"\n        q = deque([[]])\n        result = [] \n\n        while q:\n            subset = q.popleft()\n            result.append(subset)  \n            for num in nums:\n                if not subset or num > subset[-1]: \n                    new_subset = subset + [num]\n                    q.append(new_subset)  \n\n        return result"
     },
     {
       "title": "Word Break",
       "titleSlug": "word-break",
       "timestamp": 1728847159000,
       "language": "python",
-      "url": "/submissions/detail/1421314858/"
+      "url": "/submissions/detail/1421314858/",
+      "submissionCode": "class Solution(object):\n    def wordBreak(self, s, wordDict):\n        \"\"\"\n        :type s: str\n        :type wordDict: List[str]\n        :rtype: bool\n        \"\"\"\n        wordSet = set(wordDict) \n        maxWordLength = max(map(len, wordDict))  \n        dp = [True] + [False] * len(s)\n\n        for i in range(1, len(s) + 1):\n            for j in range(max(0, i - maxWordLength), i):\n                if dp[j] and s[j:i] in wordSet:\n                    dp[i] = True\n                    break\n\n        return dp[-1]\n"
     },
     {
       "title": "Sort Colors",
       "titleSlug": "sort-colors",
       "timestamp": 1728795795000,
       "language": "python",
-      "url": "/submissions/detail/1420662691/"
+      "url": "/submissions/detail/1420662691/",
+      "submissionCode": "class Solution(object):\n    def sortColors(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: None Do not return anything, modify nums in-place instead.\n        \"\"\"\n        \n        l,m,r = 0, 0, len(nums) - 1\n        \n        for i in range(len(nums)):\n            if nums[m] == 0:\n                nums[l], nums[m] = nums[m], nums[l]\n                l += 1\n                m += 1\n            elif nums[m] == 1:\n                m += 1\n            else:\n                nums[m], nums[r] = nums[r], nums[m] \n                r -= 1"
     },
     {
       "title": "Lowest Common Ancestor of a Binary Tree",
       "titleSlug": "lowest-common-ancestor-of-a-binary-tree",
       "timestamp": 1728780322000,
       "language": "python",
-      "url": "/submissions/detail/1420474965/"
+      "url": "/submissions/detail/1420474965/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, x):\n#         self.val = x\n#         self.left = None\n#         self.right = None\n\nclass Solution(object):\n    def lowestCommonAncestor(self, root, p, q):\n        \n        if not root or root == p or root == q:\n            return root\n\n        left = self.lowestCommonAncestor(root.left, p, q)\n        right = self.lowestCommonAncestor(root.right, p, q)\n\n        if left and right:\n            return root\n\n        return left if left else right"
     },
     {
       "title": "Merge Intervals",
       "titleSlug": "merge-intervals",
       "timestamp": 1728778634000,
       "language": "python",
-      "url": "/submissions/detail/1420463764/"
+      "url": "/submissions/detail/1420463764/",
+      "submissionCode": "class Solution(object):\n    def merge(self, intervals):\n        \"\"\"\n        :type intervals: List[List[int]]\n        :rtype: List[List[int]]\n        \"\"\"\n        if not intervals:\n            return []\n\n        intervals.sort(key=lambda x: x[0])\n\n        merged_intervals = []\n        start, end = intervals[0]  \n\n        for i in range(1, len(intervals)):\n            current_start, current_end = intervals[i]\n\n            if current_start <= end:\n                end = max(end, current_end)\n            else:\n                merged_intervals.append([start, end])\n                start, end = current_start, current_end\n\n        merged_intervals.append([start, end])\n\n        return merged_intervals"
     },
     {
       "title": "Permutations",
       "titleSlug": "permutations",
       "timestamp": 1728777430000,
       "language": "python",
-      "url": "/submissions/detail/1420455739/"
+      "url": "/submissions/detail/1420455739/",
+      "submissionCode": "class Solution:    \n    def permute(self, nums):\n        result = []\n\n        def backtrack(path, remaining):\n            if not remaining:\n                result.append(path)\n            for i in range(len(remaining)):\n                backtrack(path + [remaining[i]], remaining[:i] + remaining[i+1:])\n\n        backtrack([], nums)\n        return result"
     },
     {
       "title": "Combination Sum",
       "titleSlug": "combination-sum",
       "timestamp": 1728774680000,
       "language": "python",
-      "url": "/submissions/detail/1420436632/"
+      "url": "/submissions/detail/1420436632/",
+      "submissionCode": "class Solution(object):\n    def combinationSum(self, candidates, target):\n\n        dp = [ [] for _ in range(target + 1)]\n        dp [0].append([])\n\n        for i in range(1, target + 1):\n            for canidate in candidates:\n                if canidate <= i:\n                    for prev in dp[i - canidate]:\n                        temp = prev + [canidate]\n                        temp.sort()\n                        if temp not in dp[i]:\n                            dp[i].append(temp)\n        return dp[target]"
     },
     {
       "title": "Rotting Oranges",
       "titleSlug": "rotting-oranges",
       "timestamp": 1728761322000,
       "language": "python",
-      "url": "/submissions/detail/1420308788/"
+      "url": "/submissions/detail/1420308788/",
+      "submissionCode": "from collections import deque\n\nclass Solution(object):\n    def orangesRotting(self, grid):\n        r, c = len(grid), len(grid[0])\n        q = deque()\n        count_fresh_orange = 0\n\n        for i in range(r):\n            for j in range(c):\n                if grid[i][j] == 2:\n                    q.append((i, j))\n                elif grid[i][j] == 1:\n                    count_fresh_orange += 1\n\n        if count_fresh_orange == 0:\n            return 0\n\n        minutes = 0\n        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n\n        while q:\n            for _ in range(len(q)):\n                i, j = q.popleft()\n                for di, dj in directions:\n                    ni, nj = i + di, j + dj\n\n                    if 0 <= ni < r and 0 <= nj < c and grid[ni][nj] == 1:\n                        grid[ni][nj] = 2\n                        count_fresh_orange -= 1\n                        q.append((ni, nj))\n\n            minutes += 1\n\n        return minutes - 1 if count_fresh_orange == 0 else -1\n\n\n\n            "
     },
     {
       "title": "Number of Islands",
       "titleSlug": "number-of-islands",
       "timestamp": 1728759181000,
       "language": "python",
-      "url": "/submissions/detail/1420281356/"
+      "url": "/submissions/detail/1420281356/",
+      "submissionCode": "class Solution(object):\n    def numIslands(self, grid):\n        \"\"\"\n        :type grid: List[List[str]]\n        :rtype: int\n        \"\"\"\n        if not grid or not grid[0]:\n            return 0\n\n        def dfs(i, j):\n            if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[0]) or grid[i][j] != '1':\n                return\n            grid[i][j] = \"!\"\n            dfs(i + 1, j)\n            dfs(i - 1, j)\n            dfs(i, j + 1)\n            dfs(i, j - 1)\n\n        count = 0\n        for i in range(len(grid)):\n            for j in range(len(grid[0])):\n                if grid[i][j] == '1': \n                    dfs(i, j)\n                    count += 1  # Increment the island count\n        return count\n"
     },
     {
       "title": "Course Schedule",
       "titleSlug": "course-schedule",
       "timestamp": 1728668882000,
       "language": "python",
-      "url": "/submissions/detail/1419257690/"
+      "url": "/submissions/detail/1419257690/",
+      "submissionCode": "class Solution(object):\n    def canFinish(self, numCourses, prerequisites):\n        \"\"\"\n        :type numCourses: int\n        :type prerequisites: List[List[int]]\n        :rtype: bool\n        \"\"\"\n        preMap = { i:[] for i in range(numCourses) }\n        for crs, pre in prerequisites:\n            preMap[crs].append(pre)\n        \n        visited = set()\n\n        def dfs(crs):\n            if crs in visited: return False\n            if preMap[crs] == []: return True\n            visited.add(crs)\n\n            for prereq in preMap[crs]:\n                if not dfs(prereq): return False\n            \n            visited.remove(crs)\n            preMap[crs] = []\n            return True\n        \n        for crs in preMap.keys():\n            if not dfs(crs): return False\n        \n        return True\n            \n\n\n\n\n\n\n        \n"
     },
     {
       "title": "Validate Binary Search Tree",
       "titleSlug": "validate-binary-search-tree",
       "timestamp": 1728627585000,
       "language": "python",
-      "url": "/submissions/detail/1418757917/"
+      "url": "/submissions/detail/1418757917/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution(object):\n    def isValidBST(self, root):\n\n        def check(node, min_val, max_val):\n            if not node:\n                return True\n            \n            if not (min_val < node.val < max_val):\n                return False\n            \n            return (check(node.left, min_val, node.val) and\n                    check(node.right, node.val, max_val))\n        \n        return check(root, float('-inf'), float('inf'))"
     },
     {
       "title": "Product of Array Except Self",
       "titleSlug": "product-of-array-except-self",
       "timestamp": 1728626866000,
       "language": "python",
-      "url": "/submissions/detail/1418749137/"
+      "url": "/submissions/detail/1418749137/",
+      "submissionCode": "class Solution(object):\n    def productExceptSelf(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: List[int]\n        \"\"\"\n        n = len(nums)\n        answer = [1]*n\n        left_product = 1\n\n        for i in range(n):\n            answer[i] = left_product\n            left_product *= nums[i]\n        \n        right_product = 1\n        for j in range(n-1,-1,-1):\n            answer[j] *= right_product\n            right_product *= nums[j] \n        \n        return answer\n"
     },
     {
       "title": "Min Stack",
       "titleSlug": "min-stack",
       "timestamp": 1728624297000,
       "language": "python",
-      "url": "/submissions/detail/1418717984/"
+      "url": "/submissions/detail/1418717984/",
+      "submissionCode": "class MinStack(object):\n\n    def __init__(self):\n        self.stack = []\n        self.min_stack = []\n\n    def push(self, val):\n        self.stack.append(val)\n        if not self.min_stack or val <= self.min_stack[-1]:\n            self.min_stack.append(val)\n        \n\n    def pop(self):\n        if self.stack:\n            popped = self.stack.pop()\n            if self.min_stack and popped == self.min_stack[-1]:\n                self.min_stack.pop()\n\n    def top(self):\n        if self.stack:\n            return self.stack[-1]\n        return -1\n        \n\n    def getMin(self):\n        if self.min_stack:\n            return self.min_stack[-1]\n        return -1\n        \n\n\n# Your MinStack object will be instantiated and called as such:\n# obj = MinStack()\n# obj.push(val)\n# obj.pop()\n# param_3 = obj.top()\n# param_4 = obj.getMin()"
     },
     {
       "title": "Coin Change",
       "titleSlug": "coin-change",
       "timestamp": 1728623599000,
       "language": "python",
-      "url": "/submissions/detail/1418709623/"
+      "url": "/submissions/detail/1418709623/",
+      "submissionCode": "class Solution(object):\n    def coinChange(self, coins, amount):\n        \"\"\"\n        :type coins: List[int]\n        :type amount: int\n        :rtype: int\n        \"\"\"\n        memo = {}\n\n        def solve(x):\n            if x < 0:\n                return float('inf') \n            if x == 0:\n                return 0  \n\n            if x in memo:\n                return memo[x]\n\n            best = float('inf')\n\n            for coin in coins:\n                best = min(best, solve(x - coin) + 1)\n\n            memo[x] = best\n            return best\n\n        result = solve(amount)\n        return result if result != float('inf') else -1"
     },
     {
       "title": "Evaluate Reverse Polish Notation",
       "titleSlug": "evaluate-reverse-polish-notation",
       "timestamp": 1728614807000,
       "language": "python",
-      "url": "/submissions/detail/1418620792/"
+      "url": "/submissions/detail/1418620792/",
+      "submissionCode": "class Solution(object):\n    def evalRPN(self, tokens):\n\n        valid_operations = {\n            '+': lambda x, y: x + y,\n            '-': lambda x, y: x - y,\n            '*': lambda x, y: x * y,\n            '/': lambda x, y: int(float(x) / y)  \n        }\n\n        stack = []\n\n        for token in tokens:\n            if token in valid_operations:\n                operand2 = stack.pop()\n                operand1 = stack.pop()\n                result = valid_operations[token](operand1, operand2)\n                stack.append(result)\n            else:\n                stack.append(int(token))\n\n        return stack.pop()\n"
     },
     {
       "title": "Clone Graph",
       "titleSlug": "clone-graph",
       "timestamp": 1728613367000,
       "language": "python",
-      "url": "/submissions/detail/1418608674/"
+      "url": "/submissions/detail/1418608674/",
+      "submissionCode": "\"\"\"\n# Definition for a Node.\nclass Node(object):\n    def __init__(self, val = 0, neighbors = None):\n        self.val = val\n        self.neighbors = neighbors if neighbors is not None else []\n\"\"\"\n\nclass Solution(object):\n    def cloneGraph(self, node):\n        if not node:\n            return None\n        clone = {}\n        clone[node] = Node(node.val)\n        stack = [node]\n\n        while stack:\n            \n            curr = stack.pop()\n\n            for neighbor in curr.neighbors:\n                if neighbor not in clone:\n                    clone[neighbor] = Node(neighbor.val)\n                    stack.append(neighbor)\n                \n                clone[curr].neighbors.append(clone[neighbor])\n            \n        return clone[node]\n\n\n\n\n        "
     },
     {
       "title": "Binary Tree Level Order Traversal",
       "titleSlug": "binary-tree-level-order-traversal",
       "timestamp": 1728611770000,
       "language": "python",
-      "url": "/submissions/detail/1418595987/"
+      "url": "/submissions/detail/1418595987/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution(object):\n    def levelOrder(self, root):\n        result = []\n\n        def traverse(node, depth):\n            if not node:\n                return\n            \n            if len(result) == depth:\n                result.append([])\n\n            result[depth].append(node.val)\n            \n            traverse(node.left, depth + 1)\n            traverse(node.right, depth + 1)\n\n        traverse(root, 0)\n        return result"
     },
     {
       "title": "3Sum",
       "titleSlug": "3sum",
       "timestamp": 1728602171000,
       "language": "python",
-      "url": "/submissions/detail/1418527028/"
+      "url": "/submissions/detail/1418527028/",
+      "submissionCode": "class Solution(object):\n    def threeSum(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: List[List[int]]\n        \"\"\"\n        nums.sort()\n        s = set()  \n        for i in range(len(nums)):\n\n            j = i + 1\n            k = len(nums) - 1\n            while j < k:\n                total = nums[i] + nums[j] + nums[k]\n                if total == 0:\n                    s.add((nums[i], nums[j], nums[k])) \n                    j += 1\n                    k -= 1\n                    while j < k and nums[j] == nums[j - 1]:\n                        j += 1\n                    while j < k and nums[k] == nums[k + 1]:\n                        k -= 1\n                elif total < 0:\n                    j += 1\n                else:\n                    k -= 1\n\n        return list(s)\n            \n\n\n"
     },
     {
       "title": "K Closest Points to Origin",
       "titleSlug": "k-closest-points-to-origin",
       "timestamp": 1728600836000,
       "language": "python",
-      "url": "/submissions/detail/1418517278/"
+      "url": "/submissions/detail/1418517278/",
+      "submissionCode": "import heapq\n\nclass Solution(object):\n    def kClosest(self, points, k):\n        \"\"\"\n        :type points: List[List[int]]\n        :type k: int\n        :rtype: List[List[int]]\n        \"\"\"\n        heap = []\n\n        for (x,y) in points:\n            dist = -(x*x + y*y)\n            if len(heap) == k:\n                heapq.heappushpop(heap, (dist, x, y))\n            else:\n                heapq.heappush(heap, (dist, x, y))\n        \n        return [(x,y) for (dist,x, y) in heap]"
     },
     {
       "title": "01 Matrix",
       "titleSlug": "01-matrix",
       "timestamp": 1728588981000,
       "language": "python",
-      "url": "/submissions/detail/1418400472/"
+      "url": "/submissions/detail/1418400472/",
+      "submissionCode": "class Solution(object):\n    def updateMatrix(self, mat):\n        \"\"\"\n        :type mat: List[List[int]]\n        :rtype: List[List[int]]\n        \"\"\"\n        if not mat:\n            return mat\n\n        m, n = len(mat), len(mat[0])\n        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n        queue = deque()\n        \n        distance = [[float('inf')] * n for _ in range(m)]\n        \n        for i in range(m):\n            for j in range(n):\n                if mat[i][j] == 0:\n                    queue.append((i, j))\n                    distance[i][j] = 0\n        \n        while queue:\n            x, y = queue.popleft()\n            \n            for dx, dy in directions:\n                new_x, new_y = x + dx, y + dy\n                if 0 <= new_x < m and 0 <= new_y < n and distance[new_x][new_y] > distance[x][y] + 1:\n                    distance[new_x][new_y] = distance[x][y] + 1\n                    queue.append((new_x, new_y))\n        \n        return distance\n"
     },
     {
       "title": "Insert Interval",
       "titleSlug": "insert-interval",
       "timestamp": 1728588191000,
       "language": "python",
-      "url": "/submissions/detail/1418390327/"
+      "url": "/submissions/detail/1418390327/",
+      "submissionCode": "class Solution(object):\n    def insert(self, intervals, newInterval):\n        merged_intervals = []\n        i, n = 0, len(intervals)\n\n        while i < n and intervals[i][1] < newInterval[0]:\n            merged_intervals.append(intervals[i])\n            i += 1\n\n        while i < n and intervals[i][0] <= newInterval[1]:\n            newInterval[0] = min(newInterval[0], intervals[i][0])\n            newInterval[1] = max(newInterval[1], intervals[i][1])\n            i += 1\n\n        merged_intervals.append(newInterval)\n\n        while i < n:\n            merged_intervals.append(intervals[i])\n            i += 1\n\n        return merged_intervals"
     },
     {
       "title": "Maximum Subarray",
       "titleSlug": "maximum-subarray",
       "timestamp": 1728587492000,
       "language": "python",
-      "url": "/submissions/detail/1418380639/"
+      "url": "/submissions/detail/1418380639/",
+      "submissionCode": "class Solution(object):\n    def maxSubArray(self, nums):\n        b = nums[0]\n        s = 0\n        for i in range(len(nums)):\n            s = max(nums[i],s+nums[i])\n            b = max(s,b)\n        \n        return b"
     },
     {
       "title": "Maximum Depth of Binary Tree",
       "titleSlug": "maximum-depth-of-binary-tree",
       "timestamp": 1728586203000,
       "language": "python",
-      "url": "/submissions/detail/1418361919/"
+      "url": "/submissions/detail/1418361919/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution(object):\n    def maxDepth(self, root):\n        \"\"\"\n        :type root: TreeNode\n        :rtype: int\n        \"\"\"\n        self.max_depth = 0 \n        \n        def calculate_depth(root):\n            if not root:\n                return 0  \n            \n            left_depth = calculate_depth(root.left)\n            right_depth = calculate_depth(root.right)\n            \n            current_depth = 1 + max(left_depth, right_depth)\n            \n            self.max_depth = max(self.max_depth, current_depth)\n\n            return current_depth\n        \n        calculate_depth(root)  \n        return self.max_depth\n\n        return self.max_depth"
     },
     {
       "title": "Diameter of Binary Tree",
       "titleSlug": "diameter-of-binary-tree",
       "timestamp": 1728585795000,
       "language": "python",
-      "url": "/submissions/detail/1418355666/"
+      "url": "/submissions/detail/1418355666/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution(object):\n    def diameterOfBinaryTree(self, root):\n        \"\"\"\n        :type root: TreeNode\n        :rtype: int\n        \"\"\"\n        self.max_diameter = 0 \n\n        def calculate_diameter(node):\n            if not node:\n                return 0\n\n            left_height = calculate_diameter(node.left)\n            right_height = calculate_diameter(node.right)\n\n            self.max_diameter = max(self.max_diameter, left_height + right_height)\n\n            return 1 + max(left_height, right_height)\n\n        calculate_diameter(root)\n\n        return self.max_diameter"
     },
     {
       "title": "Add Binary",
       "titleSlug": "add-binary",
       "timestamp": 1728585325000,
       "language": "python",
-      "url": "/submissions/detail/1418348432/"
+      "url": "/submissions/detail/1418348432/",
+      "submissionCode": "class Solution(object):\n    def addBinary(self, a, b):\n        x, y = int(a, 2), int(b, 2)\n\n        while y:\n            sum_without_carry = x ^ y\n            carry = (x & y) << 1\n\n            x = sum_without_carry\n            y = carry\n\n        return bin(x)[2:]"
     },
     {
       "title": "Longest Palindrome",
       "titleSlug": "longest-palindrome",
       "timestamp": 1728584110000,
       "language": "python",
-      "url": "/submissions/detail/1418327382/"
+      "url": "/submissions/detail/1418327382/",
+      "submissionCode": "from collections import Counter\n\nclass Solution(object):\n    def longestPalindrome(self, s):\n\n        freq = Counter(s)\n\n        palindrome_length = 0\n        odd_found = False\n\n        for count in freq.values():\n            if count % 2 == 0:\n                palindrome_length += count\n            else:\n                palindrome_length += count - 1 \n                odd_found = True \n\n        if odd_found:\n            palindrome_length += 1\n\n        return palindrome_length"
     },
     {
       "title": "Climbing Stairs",
       "titleSlug": "climbing-stairs",
       "timestamp": 1728583577000,
       "language": "python",
-      "url": "/submissions/detail/1418317880/"
+      "url": "/submissions/detail/1418317880/",
+      "submissionCode": "class Solution(object):\n    def climbStairs(self, n):\n\n        def climb(n):\n            \n            if n==0: return 0\n            if n==1: return 1\n            if n==2: return 2\n            dp = [0]*(n+1) \n            dp[1]= 1\n            dp[2] = 2\n            for i in range(3,n+1):\n                dp[i] = dp[i-1] +dp[i-2]\n            return dp[n]\n        \n        return(climb(n))\n"
     },
     {
       "title": "Ransom Note",
       "titleSlug": "ransom-note",
       "timestamp": 1728581905000,
       "language": "python",
-      "url": "/submissions/detail/1418288238/"
+      "url": "/submissions/detail/1418288238/",
+      "submissionCode": "from collections import Counter\n\nclass Solution(object):\n    def canConstruct(self, ransomNote, magazine):\n        ransom_count = Counter(ransomNote)\n        magazine_count = Counter(magazine)\n        \n        for char, count in ransom_count.items():\n            if magazine_count[char] < count:\n                return False\n        return True"
     },
     {
       "title": "First Bad Version",
       "titleSlug": "first-bad-version",
       "timestamp": 1728580987000,
       "language": "python",
-      "url": "/submissions/detail/1418271806/"
+      "url": "/submissions/detail/1418271806/",
+      "submissionCode": "# The isBadVersion API is already defined for you.\n# @param version, an integer\n# @return a bool\n# def isBadVersion(version):\n\nclass Solution(object):\n    def firstBadVersion(self, n):\n        l = 0 \n        r = n\n\n        while l <= r:\n            k = (l+r)//2\n            if isBadVersion(l):\n                return l\n            elif isBadVersion(k):\n                r = k\n            else:\n                l = k + 1\n                \n\n"
     },
     {
       "title": "Implement Queue using Stacks",
       "titleSlug": "implement-queue-using-stacks",
       "timestamp": 1728580535000,
       "language": "python",
-      "url": "/submissions/detail/1418263923/"
+      "url": "/submissions/detail/1418263923/",
+      "submissionCode": "\n\nclass MyQueue(object):\n    \n    def __init__(self):\n        self.s1 = []\n        self.s2 = []\n\n    def push(self, x):\n        self.s1.append(x)\n        \n\n    def pop(self):\n        if not self.s2:\n            while self.s1:\n                self.s2.append(self.s1.pop())\n        return self.s2.pop()\n\n\n    def peek(self):\n        if not self.s2:\n            while self.s1:\n                self.s2.append(self.s1.pop())\n        return self.s2[-1]\n\n    def empty(self):\n        return len(self.s1) == 0 and len(self.s2) == 0\n\n\n        \n\n\n"
     },
     {
       "title": "Balanced Binary Tree",
       "titleSlug": "balanced-binary-tree",
       "timestamp": 1728579806000,
       "language": "python",
-      "url": "/submissions/detail/1418251759/"
+      "url": "/submissions/detail/1418251759/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution(object):\n    def isBalanced(self, root):\n        \"\"\"\n        :type root: TreeNode\n        :rtype: bool\n        \"\"\"\n        def checkBalance(root):\n            if not root:\n                return 0, True  \n\n            leftHeight, isLeftBalanced = checkBalance(root.left)\n            rightHeight, isRightBalanced = checkBalance(root.right)\n\n            isBalanced = isLeftBalanced and isRightBalanced and abs(leftHeight - rightHeight) <= 1\n\n            return 1 + max(leftHeight, rightHeight), isBalanced\n\n        _, isTreeBalanced = checkBalance(root)\n        return isTreeBalanced"
     },
     {
       "title": "Lowest Common Ancestor of a Binary Search Tree",
       "titleSlug": "lowest-common-ancestor-of-a-binary-search-tree",
       "timestamp": 1728537368000,
       "language": "python",
-      "url": "/submissions/detail/1417703918/"
+      "url": "/submissions/detail/1417703918/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, x):\n#         self.val = x\n#         self.left = None\n#         self.right = None\n\nclass Solution(object):\n    def lowestCommonAncestor(self, root, p, q):\n        while root:\n            if p.val < root.val and q.val < root.val:\n                root = root.left\n            elif p.val > root.val and q.val > root.val:\n                root = root.right\n            else:\n                return root\n            \n            "
     },
     {
       "title": "Flood Fill",
       "titleSlug": "flood-fill",
       "timestamp": 1728536473000,
       "language": "python",
-      "url": "/submissions/detail/1417692395/"
+      "url": "/submissions/detail/1417692395/",
+      "submissionCode": "class Solution(object):\n    def floodFill(self, image, sr, sc, color):\n        # Get the initial color of the starting pixel\n        start_color = image[sr][sc]\n        if start_color == color:\n            return image\n\n        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]\n\n        def dfs(r, c):\n            if r < 0 or r >= len(image) or c < 0 or c >= len(image[0]) or image[r][c] != start_color:\n                return\n            image[r][c] = color\n\n            for dr, dc in directions:\n                dfs(r + dr, c + dc)\n\n        dfs(sr, sc)\n        return image"
     },
     {
       "title": "Binary Search",
       "titleSlug": "binary-search",
       "timestamp": 1728535085000,
       "language": "python",
-      "url": "/submissions/detail/1417674544/"
+      "url": "/submissions/detail/1417674544/",
+      "submissionCode": "class Solution(object):\n    def search(self, nums, target):\n        \"\"\"\n        :type nums: List[int]\n        :type target: int\n        :rtype: int\n        \"\"\"\n        l = 0\n        r = len(nums) - 1\n\n        while l <= r:\n            k = (l + r) // 2\n            if nums[k] == target:\n                return k\n            if nums[k] > target:\n                r = k - 1\n            else:\n                l = k + 1\n        return -1\n        \n"
     },
     {
       "title": "Valid Anagram",
       "titleSlug": "valid-anagram",
       "timestamp": 1728534510000,
       "language": "python",
-      "url": "/submissions/detail/1417667072/"
+      "url": "/submissions/detail/1417667072/",
+      "submissionCode": "class Solution(object):\n    def isAnagram(self, s, t):\n        \"\"\"\n        :type s: str\n        :type t: str\n        :rtype: bool\n        \"\"\"\n        return sorted(s) == sorted(t)\n        "
     },
     {
       "title": "Valid Palindrome",
       "titleSlug": "valid-palindrome",
       "timestamp": 1728534395000,
       "language": "python",
-      "url": "/submissions/detail/1417665596/"
+      "url": "/submissions/detail/1417665596/",
+      "submissionCode": "class Solution(object):\n    def isPalindrome(self, s):\n        l = 0\n        r = len(s) - 1\n\n        while l < r:\n            while l < r and not s[l].isalnum():\n                l += 1\n            while l < r and not s[r].isalnum():\n                r -= 1\n            if s[l].lower() != s[r].lower():\n                return False\n            l += 1\n            r -= 1\n\n        return True"
     },
     {
       "title": "Reverse Integer",
       "titleSlug": "reverse-integer",
       "timestamp": 1728533627000,
       "language": "python",
-      "url": "/submissions/detail/1417655843/"
+      "url": "/submissions/detail/1417655843/",
+      "submissionCode": "class Solution(object):\n    def reverse(self, x):\n        is_negative = False\n\n        if x < 0:\n            is_negative = True\n            x *= -1\n        \n        res = 0\n        while x > 0:\n            res = (res * 10) + (x % 10)\n            x //= 10\n        \n        if res > 2 ** 31 - 1:\n            return 0\n        \n        return res * -1 if is_negative else res\n"
     },
     {
       "title": "Longest Common Prefix",
       "titleSlug": "longest-common-prefix",
       "timestamp": 1728524393000,
       "language": "python",
-      "url": "/submissions/detail/1417560511/"
+      "url": "/submissions/detail/1417560511/",
+      "submissionCode": "class Solution(object):\n    def longestCommonPrefix(self, v):\n        \"\"\"\n        :type strs: List[str]\n        :rtype: str\n        \"\"\"\n        ans=\"\"\n        v=sorted(v)\n        first=v[0]\n        last=v[-1]\n        for i in range(min(len(first),len(last))):\n            if(first[i]!=last[i]):\n                return ans\n            ans+=first[i]\n        return ans \n"
     },
     {
       "title": "Roman to Integer",
       "titleSlug": "roman-to-integer",
       "timestamp": 1728523213000,
       "language": "python",
-      "url": "/submissions/detail/1417550579/"
+      "url": "/submissions/detail/1417550579/",
+      "submissionCode": "class Solution(object):\n    def romanToInt(self, s):\n        m = {\n            'I': 1,\n            'V': 5,\n            'X': 10,\n            'L': 50,\n            'C': 100,\n            'D': 500,\n            'M': 1000\n        }\n        \n        ans = 0\n        \n        for i in range(len(s)):\n            if i < len(s) - 1 and m[s[i]] < m[s[i+1]]:\n                ans -= m[s[i]]\n            else:\n                ans += m[s[i]]\n        \n        return ans\n        "
     },
     {
       "title": "Container With Most Water",
       "titleSlug": "container-with-most-water",
       "timestamp": 1728522574000,
       "language": "python",
-      "url": "/submissions/detail/1417545284/"
+      "url": "/submissions/detail/1417545284/",
+      "submissionCode": "class Solution(object):\n    def maxArea(self, height):\n        \"\"\"\n        :type height: List[int]\n        :rtype: int\n        \"\"\"\n        max_area = 0\n        l = 0\n        r = len(height) - 1\n\n        while l < r:\n            area = (r-l)*(min(height[l],height[r]))\n            max_area = max(area, max_area)\n\n            if height[l] < height[r]:\n                l += 1\n            else:\n                r -= 1\n        \n        return max_area\n"
     },
     {
       "title": "Longest Palindromic Substring",
       "titleSlug": "longest-palindromic-substring",
       "timestamp": 1728521380000,
       "language": "python",
-      "url": "/submissions/detail/1417535592/"
+      "url": "/submissions/detail/1417535592/",
+      "submissionCode": "class Solution(object):\n    def longestPalindrome(self, s):\n        if len(s) <= 1:\n            return s\n\n        def expand_from_center(left, right):\n            while left >= 0 and right < len(s) and s[left] == s[right]:\n                left -= 1\n                right += 1\n            return s[left + 1:right]\n\n        max_str = s[0]\n\n        for i in range(len(s) - 1):\n            odd = expand_from_center(i, i)\n            even = expand_from_center(i, i + 1)\n\n            if len(odd) > len(max_str):\n                max_str = odd\n            if len(even) > len(max_str):\n                max_str = even\n\n        return max_str"
     },
     {
       "title": "Longest Substring Without Repeating Characters",
       "titleSlug": "longest-substring-without-repeating-characters",
       "timestamp": 1728418311000,
       "language": "python",
-      "url": "/submissions/detail/1416288833/"
+      "url": "/submissions/detail/1416288833/",
+      "submissionCode": "class Solution(object):\n    def lengthOfLongestSubstring(self, s):\n        charSet = set()\n        left = 0\n        n = len(s)\n        maxLength = 0\n        \n        for right in range(n):\n            \n            if s[right] not in charSet:\n                charSet.add(s[right])\n                maxLength = max(maxLength, right - left + 1)\n\n\n            else:\n                while s[right] in charSet:\n                    charSet.remove(s[left])\n                    left += 1\n                charSet.add(s[right])\n        \n        return maxLength\n"
     },
     {
       "title": "Add Two Numbers",
       "titleSlug": "add-two-numbers",
       "timestamp": 1728415196000,
       "language": "python",
-      "url": "/submissions/detail/1416247492/"
+      "url": "/submissions/detail/1416247492/",
+      "submissionCode": "# Definition for singly-linked list.\n# class ListNode(object):\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution(object):\n    def addTwoNumbers(self, l1, l2):\n        \n        root = ListNode(0)\n        total = root\n        carry = 0\n        while l1 or l2 or carry != 0:\n            val1 = l1.val if l1 else 0\n            val2 = l2.val if l2 else 0\n        \n            sum = val1 + val2 + carry\n            carry = sum//10\n            digit = sum%10\n\n            total.next = ListNode(digit)\n            total = total.next\n        \n            if l1: \n                l1 = l1.next\n            if l2: \n                l2 = l2.next\n\n        return root.next\n\n\n\n            "
     },
     {
       "title": "Construct Binary Search Tree from Preorder Traversal",
       "titleSlug": "construct-binary-search-tree-from-preorder-traversal",
       "timestamp": 1716947682000,
       "language": "python",
-      "url": "/submissions/detail/1270937251/"
+      "url": "/submissions/detail/1270937251/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def bstFromPreorder(self, preorder):\n        if not preorder:\n            return None\n        \n        node = TreeNode(preorder[0])\n        node.left = self.bstFromPreorder([x for x in preorder if x < preorder[0]])\n        node.right = self.bstFromPreorder([x for x in preorder if x > preorder[0]])\n    \n        return node"
     },
     {
       "title": "Best Time to Buy and Sell Stock II",
       "titleSlug": "best-time-to-buy-and-sell-stock-ii",
       "timestamp": 1710107172000,
       "language": "python",
-      "url": "/submissions/detail/1199968307/"
+      "url": "/submissions/detail/1199968307/",
+      "submissionCode": "class Solution(object):\n    def maxProfit(self, prices):\n        \"\"\"\n        :type prices: List[int]\n        :rtype: int\n        \"\"\"\n        profit = 0\n        \n        for i in range(1, len(prices)):\n            if prices[i] > prices[i - 1]:\n                profit += prices[i] - prices[i - 1]\n        \n        return profit"
     },
     {
       "title": "Invert Binary Tree",
       "titleSlug": "invert-binary-tree",
       "timestamp": 1709930526000,
       "language": "java",
-      "url": "/submissions/detail/1197952979/"
+      "url": "/submissions/detail/1197952979/",
+      "submissionCode": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public TreeNode invertTree(TreeNode root) {\n        inorder(root);\n        return root;\n    }\n\n    public TreeNode inorder(TreeNode root) {\n        if (root == null) {\n            return null;\n        }\n\n        inorder(root.left);\n        inorder(root.right);\n        TreeNode temp = root.left;\n        root.left = root.right;\n        root.right = temp;\n\n        return root;\n    }\n\n}"
     },
     {
       "title": "Binary Tree Inorder Traversal",
       "titleSlug": "binary-tree-inorder-traversal",
       "timestamp": 1709926829000,
       "language": "java",
-      "url": "/submissions/detail/1197918720/"
+      "url": "/submissions/detail/1197918720/",
+      "submissionCode": "/**\n * Definition for a binary tree node.\n * public class TreeNode {\n *     int val;\n *     TreeNode left;\n *     TreeNode right;\n *     TreeNode() {}\n *     TreeNode(int val) { this.val = val; }\n *     TreeNode(int val, TreeNode left, TreeNode right) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *     }\n * }\n */\nclass Solution {\n    public List<Integer> inorderTraversal(TreeNode root) {\n        List<Integer> list = new ArrayList<>();        \n        return helper(root,list);\n    }\n    public List<Integer> helper(TreeNode root, List<Integer> list) {\n        if (root != null) {\n            helper(root.left, list);\n            list.add(root.val);\n            helper(root.right,list);\n        }\n        return list;\n    }\n}"
     },
     {
       "title": "Convert Sorted Array to Binary Search Tree",
       "titleSlug": "convert-sorted-array-to-binary-search-tree",
       "timestamp": 1709926000000,
       "language": "python",
-      "url": "/submissions/detail/1197910235/"
+      "url": "/submissions/detail/1197910235/",
+      "submissionCode": "# Definition for a binary tree node.\n# class TreeNode(object):\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\n\nclass Solution(object):\n    def sortedArrayToBST(self, nums):\n        \"\"\"\n        :type nums: List[int]\n        :rtype: TreeNode\n        \"\"\"\n        totalNums = len(nums)\n        if totalNums == 0:\n            return None\n        midPoint = totalNums // 2\n\n        return TreeNode(nums[midPoint], \n                        self.sortedArrayToBST(nums[:midPoint]), \n                        self.sortedArrayToBST(nums[midPoint + 1:]))"
     },
     {
       "title": "Median of Two Sorted Arrays",
       "titleSlug": "median-of-two-sorted-arrays",
       "timestamp": 1692218316000,
       "language": "python",
-      "url": "/submissions/detail/1023389563/"
+      "url": "/submissions/detail/1023389563/",
+      "submissionCode": "class Solution(object):\n    def findMedianSortedArrays(self, nums1, nums2):\n        \"\"\"\n        :type nums1: List[int]\n        :type nums2: List[int]\n        :rtype: float\n        \"\"\"\n\n        bigBoy = nums1 + nums2\n        bigBoy.sort()\n        length = len(bigBoy)\n        if (length%2==0):\n            return (bigBoy[length/2]+bigBoy[(length/2)-1])*0.5\n        else: \n            return (bigBoy[length/2])\n                "
     },
     {
       "title": "Two Sum II - Input Array Is Sorted",
       "titleSlug": "two-sum-ii-input-array-is-sorted",
       "timestamp": 1691963875000,
       "language": "python",
-      "url": "/submissions/detail/1020584869/"
+      "url": "/submissions/detail/1020584869/",
+      "submissionCode": "class Solution(object):\n    def twoSum(self, numbers, target):\n        \"\"\"\n        :type numbers: List[int]\n        :type target: int\n        :rtype: List[int]\n        \"\"\"\n        res = []\n\n        l, r = 0, len(numbers) -1\n        while l < r:\n            if numbers[l] + numbers[r] == target:\n                return[l+1,r+1]\n            elif numbers[l] + numbers[r] > target:\n                r -= 1\n            elif numbers[l] + numbers[r] < target:\n                l += 1\n            \n"
     },
     {
       "title": "Middle of the Linked List",
       "titleSlug": "middle-of-the-linked-list",
       "timestamp": 1691687424000,
       "language": "python",
-      "url": "/submissions/detail/1017736386/"
+      "url": "/submissions/detail/1017736386/",
+      "submissionCode": "# Definition for singly-linked list.\n# class ListNode(object):\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution(object):\n    def middleNode(self, head):\n        \"\"\"\n        :type head: ListNode\n        :rtype: ListNode\n        \"\"\"\n        ''\n        slow, fast = head, head\n        while fast and fast.next:\n            slow = slow.next\n            fast = fast.next.next\n        \n        return slow"
     },
     {
       "title": "Reverse Linked List",
       "titleSlug": "reverse-linked-list",
       "timestamp": 1691686845000,
       "language": "python",
-      "url": "/submissions/detail/1017727220/"
+      "url": "/submissions/detail/1017727220/",
+      "submissionCode": "# Definition for singly-linked list.\n# class ListNode(object):\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution(object):\n    def reverseList(self, head):\n        prev, cur = None, head\n        while cur:\n            new = cur.next\n            cur.next = prev\n            prev = cur\n            cur = new\n\n        return prev"
     },
     {
       "title": "Linked List Cycle",
       "titleSlug": "linked-list-cycle",
       "timestamp": 1691685674000,
       "language": "python",
-      "url": "/submissions/detail/1017709591/"
+      "url": "/submissions/detail/1017709591/",
+      "submissionCode": "# Definition for singly-linked list.\n# class ListNode(object):\n#     def __init__(self, x):\n#         self.val = x\n#         self.next = None\n\nclass Solution(object):\n    def hasCycle(self, head):\n        slow, fast = head, head\n\n        while fast and fast.next:\n            fast = fast.next.next\n            if slow == fast:\n                return True\n            else:\n                slow = slow.next\n\n        return False\n"
     },
     {
       "title": "Merge Two Sorted Lists",
       "titleSlug": "merge-two-sorted-lists",
       "timestamp": 1691623206000,
       "language": "python",
-      "url": "/submissions/detail/1017034904/"
+      "url": "/submissions/detail/1017034904/",
+      "submissionCode": "# Definition for singly-linked list.\n# class ListNode(object):\n#     def __init__(self, val=0, next=None):\n#         self.val = val\n#         self.next = next\nclass Solution(object):\n    def mergeTwoLists(self, list1, list2):\n        \"\"\"\n        :type list1: Optional[ListNode]\n        :type list2: Optional[ListNode]\n        :rtype: Optional[ListNode]\n        \"\"\"\n        \n        cur = dummy = ListNode()\n        while list1 and list2:\n            if list1.val < list2.val:\n                cur.next = list1\n                cur = cur.next\n                list1 = list1.next\n            else:\n                cur.next = list2\n                cur = cur.next\n                list2 = list2.next\n        \n        if list1 or list2:\n            cur.next = list1 if list1 else list2\n        return dummy.next\n"
     },
     {
       "title": "Contains Duplicate",
       "titleSlug": "contains-duplicate",
       "timestamp": 1691620762000,
       "language": "python",
-      "url": "/submissions/detail/1017019273/"
+      "url": "/submissions/detail/1017019273/",
+      "submissionCode": "class Solution(object):\n    def containsDuplicate(self, nums):\n        nums.sort()\n        n = len(nums)\n        for i in range(n-1):\n            if nums[i] == nums[i+1]:\n                return True\n        \n        return False\n"
     },
     {
       "title": "Majority Element",
       "titleSlug": "majority-element",
       "timestamp": 1691620486000,
       "language": "python",
-      "url": "/submissions/detail/1017017456/"
+      "url": "/submissions/detail/1017017456/",
+      "submissionCode": "class Solution(object):\n    def majorityElement(self, nums):\n        nums.sort()\n        n = len(nums)\n        return nums[n//2]"
     },
     {
       "title": "Two Sum",
       "titleSlug": "two-sum",
       "timestamp": 1691619965000,
       "language": "python",
-      "url": "/submissions/detail/1017014035/"
+      "url": "/submissions/detail/1017014035/",
+      "submissionCode": "class Solution(object):\n    def twoSum(self, nums, target):\n        hashTable = {}\n        n = len(nums)\n\n        for i in range(n):\n            complementNumber = target - nums[i]\n            if complementNumber in hashTable:\n                return[hashTable[complementNumber], i]\n            hashTable[nums[i]] = i\n        \n        return []"
     },
     {
       "title": "Valid Parentheses",
       "titleSlug": "valid-parentheses",
       "timestamp": 1689865699000,
       "language": "java",
-      "url": "/submissions/detail/999431561/"
+      "url": "/submissions/detail/999431561/",
+      "submissionCode": "public class Solution {\n\tpublic boolean isValid(String s) {\n\t\tStack<Character> string = new Stack<Character>();\n\t\tfor(char c: s.toCharArray()) {\n\t\t\tif (c == '(' || c == '{' || c == '[') {\n\t\t\t\tstring.push(c);\n\t\t\t} else {\n\t\t\t\t\n\t\t\t\tif(string.isEmpty()) {\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tif(string.peek() == '(' && c == ')' || string.peek() == '[' && c == ']' || string.peek() == '{' && c == '}') {\n\t\t\t\t\tstring.pop();\n\t\t\t\t} else {\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t\n\t\t\t}\n\t\t\t\n\t\t}\n\t\t\n\t\treturn string.isEmpty();\n\t\n\t\t\t}\n}"
     },
     {
       "title": "Best Time to Buy and Sell Stock",
       "titleSlug": "best-time-to-buy-and-sell-stock",
       "timestamp": 1689707705000,
       "language": "java",
-      "url": "/submissions/detail/997868862/"
+      "url": "/submissions/detail/997868862/",
+      "submissionCode": "class Solution {\n\tpublic int maxProfit(int[] prices) {\n\t    int buyPrice = prices[0];\n\t    int sellPrice = prices[0];\n\t    int profit = 0;\n\t    for(int i=0;i<prices.length;i++) {\n\t\t\t\tsellPrice = prices[i];\n\t    \tif(buyPrice>prices[i]) {\n\t    \t\tbuyPrice = prices[i];\n\t    \t}\n\t    \tif((sellPrice-buyPrice)>0 && (sellPrice-buyPrice)>profit) {\n\t    \t\tprofit = (sellPrice-buyPrice);\n\t    \t}\n\t    }\n\t    \n\t    return profit;\n    \n\t\t}\n}\n"
     }
   ]
 }
